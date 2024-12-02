@@ -5,6 +5,8 @@ import {
 	Draft,
 	Immutable
 } from "./internal"
+import {enableMapSet} from "./plugins/mapset"
+import {enablePatches} from "./plugins/patches"
 
 export {
 	Draft,
@@ -111,7 +113,7 @@ export function castImmutable<T>(value: T): Immutable<T> {
 	return value as any
 }
 
-export {Immer}
+enableMapSet()
+enablePatches()
 
-export {enablePatches} from "./plugins/patches"
-export {enableMapSet} from "./plugins/mapset"
+export {Immer}
